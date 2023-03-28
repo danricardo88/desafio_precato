@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:8.0.21
+    container_name: teste_api
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: database_development
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 123456
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db:/var/lib/mysql
